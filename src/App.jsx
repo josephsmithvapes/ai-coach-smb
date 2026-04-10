@@ -33,7 +33,7 @@ export default function App() {
              <div style={{ width: '1.75rem', height: '1.75rem', background: 'var(--midnight)', borderRadius: '0.375rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <div style={{ width: '0.625rem', height: '0.625rem', border: '2px solid var(--sage)', borderRadius: '50%' }}></div>
              </div>
-             <span className="logo-text" style={{ fontWeight: 800, fontSize: '1.25rem', letterSpacing: '-0.02em' }}>AI Integration Specialists</span>
+             <span className="logo-text" style={{ fontWeight: 800, fontSize: '1.25rem', letterSpacing: '-0.02em' }}>AI Integration+</span>
           </div>
           <a href="#book" className="btn-primary">Audit Now</a>
         </div>
@@ -100,7 +100,9 @@ export default function App() {
           <div className="grid grid-2" style={{ alignItems: 'flex-start' }}>
             <div>
               <h2>Professional Strategy.</h2>
-              <p>Discovery calls are grounded in Google-certified AI principles and 2026 data analytics.</p>
+              <p>We build the agents. We train the humans. We unlock the data.
+In the fast-paced world of Retail, DTC, and F&B, staying competitive means moving beyond manual workflows. We build custom AI agents designed to handle the heavy lifting—from optimizing inventory logic to personalizing customer journeys.
+ But tools are only half the battle. We bridge the gap between innovation and integrity by training your team in Responsible AI. Our dual-track training ensures your staff masters high-level prompting and technical execution while staying firmly within legal and ethical guardrails. Whether you are a solo creator or a mid-sized operation, we integrate the future of your business—safely, smartly, and at scale.</p>
               <div style={{ marginTop: '2rem' }}>
                 <div style={{ display: 'flex', gap: '0.625rem', marginBottom: '1rem' }}><CheckCircle color="var(--sage)" size={20}/> <strong>Integration:</strong> Scalable agent architecture</div>
                 <div style={{ display: 'flex', gap: '0.625rem', marginBottom: '1rem' }}><CheckCircle color="var(--sage)" size={20}/> <strong>Governance:</strong> Google-certified training</div>
@@ -126,7 +128,7 @@ export default function App() {
       </section>
 
       <footer className="container" style={{ padding: '2.5rem 0', textAlign: 'center', opacity: 0.6, fontSize: '0.875rem', borderTop: '1px solid var(--slate-100)' }}>
-        © 2026 Core Logic | Google Certified AI Professional
+        © 2026 AI Integration+ | Google Certified AI Professional
       </footer>
     </div>
   );
