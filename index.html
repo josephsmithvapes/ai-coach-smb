@@ -171,7 +171,31 @@
     <meta property="og:image" content="https://aiintegrationplus.com/og-image.png" />
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Pre-rendered App Shell for instant First Contentful Paint (FCP) -->
+      <nav aria-label="Main navigation" style="border-bottom: 1px solid var(--slate-100); position: sticky; top: 0; background: rgba(255,255,255,0.95); z-index: 100;">
+        <div class="container nav-wrapper">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <div aria-hidden="true" style="width: 1.75rem; height: 1.75rem; background: var(--midnight); border-radius: 0.375rem; display: flex; align-items: center; justify-content: center;">
+              <div style="width: 0.625rem; height: 0.625rem; border: 2px solid var(--sage); border-radius: 50%;"></div>
+            </div>
+            <span class="logo-text" style="font-family: 'Inter'; font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em;">AI Integration+</span>
+          </div>
+          <a href="#book" class="btn-primary">Book Free Audit</a>
+        </div>
+      </nav>
+      <header style="padding: 2rem 0 4rem;">
+        <div class="container">
+          <div style="max-width: 52rem;">
+            <span class="eyebrow">For Retail, Food &amp; Beverage, and DTC Businesses</span>
+            <h1>Afraid of AI?<br />Your competitors aren't.</h1>
+            <p style="font-size: 1.25rem; margin-bottom: 2.5rem; max-width: 42rem;">
+              We automate the tasks eating your hours, train your team to work smarter, and turn your business data into decisions that drive growth — stop running your business and start scaling it.
+            </p>
+          </div>
+        </div>
+      </header>
+    </div>
     <script type="module" src="./src/main.jsx"></script>
   </body>
 </html>
