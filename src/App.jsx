@@ -89,15 +89,9 @@ const secondsToday = () => {
   return n.getUTCHours() * 3600 + n.getUTCMinutes() * 60 + n.getUTCSeconds();
 };
 
-export default function App() {
-  const [activeCard,   setActiveCard]   = useState(null);
+function LiveTicker() {
   const [counter,      setCounter]      = useState(secondsToday() * HRS_PER_SECOND);
   const [tickerIndex,  setTickerIndex]  = useState(0);
-  const [hours,        setHours]        = useState(20);
-  const [industry,     setIndustry]     = useState("Retail");
-  const [status,       setStatus]       = useState("");
-  const [service,      setService]      = useState("General Inquiry");
-  const [message,      setMessage]      = useState(SERVICE_MESSAGES["General Inquiry"]);
 
   useEffect(() => {
     const t1 = setInterval(() => setCounter(c => c + HRS_PER_SECOND), 1000);
@@ -105,6 +99,35 @@ export default function App() {
     const t2 = reduceMotion ? null : setInterval(() => setTickerIndex(i => (i + 1) % TICKER_FACTS.length), 5000);
     return () => { clearInterval(t1); if (t2) clearInterval(t2); };
   }, []);
+
+  return (
+    <section className="ticker-bar">
+      <div className="container ticker-inner">
+        <div className="ticker-counter">
+          <span className="label-xs" style={{ color: 'rgba(255,255,255,0.4)', whiteSpace: 'nowrap' }}>Estimated hours saved by AI globally today</span>
+          <span style={{ fontSize: '1.375rem', fontWeight: 800, color: 'var(--sage)', fontVariantNumeric: 'tabular-nums' }}>
+            {counter.toLocaleString()}
+          </span>
+          <span className="label-xs" style={{ color: 'rgba(255,255,255,0.25)', whiteSpace: 'nowrap' }}>Based on McKinsey &amp; Freshworks productivity data</span>
+        </div>
+        <div className="ticker-fact">
+          <span className="label-xs" style={{ color: 'rgba(255,255,255,0.4)', whiteSpace: 'nowrap' }}>Latest</span>
+          <span aria-live="polite" aria-atomic="true" className="ticker-fact-text" style={{ fontSize: '0.8125rem', color: 'rgba(255,255,255,0.75)' }}>
+            {TICKER_FACTS[tickerIndex]}
+          </span>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default function App() {
+  const [activeCard,   setActiveCard]   = useState(null);
+  const [hours,        setHours]        = useState(20);
+  const [industry,     setIndustry]     = useState("Retail");
+  const [status,       setStatus]       = useState("");
+  const [service,      setService]      = useState("General Inquiry");
+  const [message,      setMessage]      = useState(SERVICE_MESSAGES["General Inquiry"]);
 
   const handleServiceChange = (e) => {
     const v = e.target.value;
@@ -256,23 +279,7 @@ export default function App() {
       </section>
 
       {/* ── LIVE TICKER ── */}
-      <section className="ticker-bar">
-        <div className="container ticker-inner">
-          <div className="ticker-counter">
-            <span className="label-xs" style={{ color: 'rgba(255,255,255,0.4)', whiteSpace: 'nowrap' }}>Estimated hours saved by AI globally today</span>
-            <span style={{ fontSize: '1.375rem', fontWeight: 800, color: 'var(--sage)', fontVariantNumeric: 'tabular-nums' }}>
-              {counter.toLocaleString()}
-            </span>
-            <span className="label-xs" style={{ color: 'rgba(255,255,255,0.25)', whiteSpace: 'nowrap' }}>Based on McKinsey &amp; Freshworks productivity data</span>
-          </div>
-          <div className="ticker-fact">
-            <span className="label-xs" style={{ color: 'rgba(255,255,255,0.4)', whiteSpace: 'nowrap' }}>Latest</span>
-            <span aria-live="polite" aria-atomic="true" className="ticker-fact-text" style={{ fontSize: '0.8125rem', color: 'rgba(255,255,255,0.75)' }}>
-              {TICKER_FACTS[tickerIndex]}
-            </span>
-          </div>
-        </div>
-      </section>
+      <LiveTicker />
 
       {/* ── SERVICES ── */}
       <section style={{ background: 'var(--slate-100)' }}>
