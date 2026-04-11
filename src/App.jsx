@@ -211,7 +211,7 @@ export default function App() {
                   id="hours-slider"
                   type="range" min="5" max="60" value={hours}
                   onChange={(e) => setHours(e.target.value)}
-                  style={{ width: '100%', cursor: 'pointer', accentColor: 'var(--sage)', marginBottom: '0.375rem' }}
+                  style={{ width: '100%', cursor: 'pointer', accentColor: 'var(--midnight)', marginBottom: '0.375rem' }}
                 />
                 <div className="label-xs" style={{ display: 'flex', justifyContent: 'space-between', color: 'rgba(255,255,255,0.4)' }}>
                   <span>5 hrs/wk</span>
