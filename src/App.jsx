@@ -140,6 +140,8 @@ export default function App() {
         </div>
       </nav>
 
+      <main>
+
       {/* ── HERO ── */}
       <header style={{ padding: '2rem 0 4rem' }}>
         <div className="container">
@@ -414,6 +416,8 @@ export default function App() {
           </div>
         </div>
       </section>
+
+      </main>
 
       {/* ── FOOTER ── */}
       <footer className="container" style={{ padding: '2rem 0', textAlign: 'center', color: 'var(--slate-600)', fontSize: '0.8125rem', borderTop: '1px solid var(--slate-100)' }}>
