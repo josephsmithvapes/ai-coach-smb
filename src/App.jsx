@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
 const EMAIL = 'sky@aii.coach';
-const FORM_ENDPOINT = 'https://formspree.io/f/meepbpzn';
+// Delivers each submission straight to sky@aii.coach (FormSubmit; no account needed).
+const FORM_ENDPOINT = `https://formsubmit.co/ajax/${EMAIL}`;
 
 const SERVICES = [
   { title: 'Technical advising', desc: 'A straight answer on what to build, buy, keep or switch off — before you spend on it.' },
@@ -35,8 +36,11 @@ function ContactForm() {
     e.preventDefault();
     setStatus('sending');
     try {
-      const res = await fetch(FORM_ENDPOINT, { method: 'POST', body: new FormData(e.target), headers: { Accept: 'application/json' } });
-      if (!res.ok) throw new Error();
+      const data = new FormData(e.target);
+      if (data.get('_honey')) { setStatus('sent'); return; } // bot filled the hidden field
+      const res = await fetch(FORM_ENDPOINT, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
+      const j = await res.json().catch(() => ({}));
+      if (!res.ok || String(j.success) === 'false') throw new Error();
       setStatus('sent');
       e.target.reset();
     } catch {
@@ -64,7 +68,10 @@ function ContactForm() {
         </select>
       </div>
       <div className="field"><label htmlFor="c-msg">What's happening?</label><textarea id="c-msg" name="message" required placeholder="The problem, what you've tried, and what it's costing you." /></div>
-      <input type="hidden" name="_subject" value="aii.coach — new enquiry" />
+      <input type="hidden" name="_subject" value="New enquiry from aii.coach" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="text" name="_honey" tabIndex="-1" autoComplete="off" className="sr-only" aria-hidden="true" />
       <button className="btn btn-dark" type="submit" disabled={status === 'sending'}>{status === 'sending' ? 'Sending…' : 'Send'}</button>
       {status === 'error' && <p className="err" role="alert">That didn't send. Please email {EMAIL} directly.</p>}
     </form>
