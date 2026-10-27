@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.aii.coach/</loc></url>
+  <url><loc>https://www.aii.coach/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://www.aii.coach/faq/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://www.aii.coach/services/technical-advising/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://www.aii.coach/services/implementation/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://www.aii.coach/services/operational-root-causing/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://www.aii.coach/services/systems/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://www.aii.coach/services/administrative-support/</loc><lastmod>2026-10-27</lastmod></url>
 </urlset>

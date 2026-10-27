@@ -8,6 +8,7 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://www.aii.coach/" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#F4F3EF" />
 
     <meta property="og:type" content="website" />
@@ -15,7 +16,12 @@
     <meta property="og:title" content="aii.coach — Find the real problem. Fix it properly. Leave it running." />
     <meta property="og:description" content="Technical advising, implementation, operational root-causing, systems and admin support for small teams." />
     <meta property="og:url" content="https://www.aii.coach/" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content="https://www.aii.coach/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="aii.coach — Find the real problem. Fix it properly. Leave it running." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://www.aii.coach/og-image.png" />
 
     <!-- Fonts are served from this site (no third-party requests) and never block the first paint. -->
     <link rel="preload" href="/fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin />
@@ -70,6 +76,11 @@
       .svc { border-right: 1px solid var(--ink); padding: 32px 22px 40px; display: flex; flex-direction: column; gap: 14px; }
       .svc .num { font-family: var(--mono); font-size: 13px; color: var(--accent); }
       .svc h3 { margin: 0; font-size: 22px; letter-spacing: -.01em; }
+      .svc-link { text-decoration: none; }
+      .svc-link::after { content: "\00a0→"; color: var(--accent); }
+      .svc { position: relative; }
+      .svc-link::before { content: ""; position: absolute; inset: 0; }
+      .svc:hover { background: #FBFAF7; }
       .svc p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--ink-2); }
       @media (max-width: 719px) { .svc { border-bottom: 1px solid var(--ink); } .svc:last-child { border-bottom: 0; } }
 
@@ -163,9 +174,7 @@
       }
     </style>
 
-    <script type="application/ld+json">
-      {"@context":"https://schema.org","@type":"ProfessionalService","name":"aii.coach","url":"https://www.aii.coach/","email":"sky@aii.coach","founder":{"@type":"Person","name":"Sky Madsen","jobTitle":"Fractional IT & systems lead"},"areaServed":"US","address":{"@type":"PostalAddress","addressLocality":"Los Angeles","addressRegion":"CA","addressCountry":"US"},"description":"Hands-on tech advisor for small teams: technical advising, implementation, operational root-causing, systems and administrative support."}
-    </script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ProfessionalService","@id":"https://www.aii.coach/#org","name":"aii.coach","url":"https://www.aii.coach/","email":"sky@aii.coach","logo":"https://www.aii.coach/og-logo.png","image":"https://www.aii.coach/og-image.png","description":"Hands-on tech advisor for small teams: technical advising, implementation, operational root-causing, systems and administrative support.","slogan":"Find the real problem. Fix it properly. Leave it running.","founder":{"@id":"https://www.aii.coach/#sky"},"address":{"@type":"PostalAddress","addressLocality":"Los Angeles","addressRegion":"CA","addressCountry":"US"},"areaServed":[{"@type":"City","name":"Los Angeles"},{"@type":"Country","name":"United States"}],"knowsAbout":["IT for small businesses","website performance on mobile","business systems","process improvement","software implementation","IT administration"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Technical advising","url":"https://www.aii.coach/services/technical-advising/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Implementation","url":"https://www.aii.coach/services/implementation/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Operational root-causing","url":"https://www.aii.coach/services/operational-root-causing/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Systems","url":"https://www.aii.coach/services/systems/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Administrative support","url":"https://www.aii.coach/services/administrative-support/"}}]}},{"@type":"Person","@id":"https://www.aii.coach/#sky","name":"Sky Madsen","jobTitle":"Fractional IT & systems lead","worksFor":{"@id":"https://www.aii.coach/#org"},"email":"sky@aii.coach","url":"https://www.aii.coach/"},{"@type":"WebSite","@id":"https://www.aii.coach/#site","url":"https://www.aii.coach/","name":"aii.coach","publisher":{"@id":"https://www.aii.coach/#org"}}]}</script>
   </head>
   <body>
     <header class="header">
@@ -176,7 +185,7 @@
         </a>
         <nav class="nav" aria-label="Main">
           <a href="#services">Services</a>
-          <a href="#method">Method</a>
+          <a href="/faq/">FAQ</a>
           <a href="#founding">Founding</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -202,11 +211,11 @@
         <h2 id="services-h" class="sr-only">Services</h2>
         <div class="wrap">
           <ul class="svc-grid">
-            <li class="svc"><div class="num">01</div><h3>Technical advising</h3><p>A straight answer on what to build, buy, keep or switch off — before you spend on it.</p></li>
-            <li class="svc"><div class="num">02</div><h3>Implementation</h3><p>We set it up, connect it to what you already run, and make sure your team can use it.</p></li>
-            <li class="svc"><div class="num">03</div><h3>Operational root-causing</h3><p>When the same thing keeps breaking, we trace it to the cause instead of patching today's fire.</p></li>
-            <li class="svc"><div class="num">04</div><h3>Systems</h3><p>Tools, data and workflows shaped around how your people actually work.</p></li>
-            <li class="svc"><div class="num">05</div><h3>Administrative support</h3><p>Accounts, access, vendors, renewals — the IT chores nobody on your team owns.</p></li>
+            <li class="svc"><div class="num">01</div><h3><a href="/services/technical-advising/" class="svc-link">Technical advising</a></h3><p>A straight answer on what to build, buy, keep or switch off — before you spend on it.</p></li>
+            <li class="svc"><div class="num">02</div><h3><a href="/services/implementation/" class="svc-link">Implementation</a></h3><p>We set it up, connect it to what you already run, and make sure your team can use it.</p></li>
+            <li class="svc"><div class="num">03</div><h3><a href="/services/operational-root-causing/" class="svc-link">Operational root-causing</a></h3><p>When the same thing keeps breaking, we trace it to the cause instead of patching today's fire.</p></li>
+            <li class="svc"><div class="num">04</div><h3><a href="/services/systems/" class="svc-link">Systems</a></h3><p>Tools, data and workflows shaped around how your people actually work.</p></li>
+            <li class="svc"><div class="num">05</div><h3><a href="/services/administrative-support/" class="svc-link">Administrative support</a></h3><p>Accounts, access, vendors, renewals — the IT chores nobody on your team owns.</p></li>
           </ul>
         </div>
       </section>

@@ -4,7 +4,7 @@ const ok = document.getElementById('form-ok');
 const err = document.getElementById('form-err');
 const ENDPOINT = 'https://formsubmit.co/ajax/sky@aii.coach';
 
-form.addEventListener('submit', async (e) => {
+form?.addEventListener('submit', async (e) => {
   e.preventDefault();
   if (!form.reportValidity()) return;
   const data = new FormData(form);
