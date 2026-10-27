@@ -90,3 +90,44 @@ a:hover { color: var(--accent); }
 /* footer */
 .footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 20px; padding-bottom: 20px; font-family: var(--mono); font-size: 12px; color: var(--ink-3); }
 .footer .left { display: inline-flex; align-items: center; gap: 8px; }
+
+/* ── Soft red glow ── slow, low-contrast pulses; still when the visitor prefers reduced motion */
+:root { --glow: #E5484D; }
+html, body { overflow-x: hidden; }
+@supports (overflow: clip) { html, body { overflow-x: clip; } }
+
+.hero, .contact { position: relative; isolation: isolate; }
+.hero::before, .contact::before {
+  content: ""; position: absolute; z-index: -1; pointer-events: none; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(229, 72, 77, 0.22), rgba(229, 72, 77, 0.08) 55%, transparent 100%);
+  filter: blur(8px);
+  animation: aii-breathe 7s ease-in-out infinite;
+}
+.hero::before { width: min(78vw, 760px); aspect-ratio: 1; right: -12%; top: -6%; }
+.contact::before { width: min(70vw, 560px); aspect-ratio: 1; left: -10%; top: 10%; animation-delay: -3.5s; }
+
+.band { position: relative; overflow: hidden; isolation: isolate; }
+.band::after {
+  content: ""; position: absolute; z-index: -1; pointer-events: none; inset: auto -10% -60% auto;
+  width: min(60vw, 520px); aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(229, 72, 77, 0.30), transparent);
+  animation: aii-breathe 8s ease-in-out infinite;
+}
+
+.mark-halo { transform-box: fill-box; transform-origin: center; opacity: 0.35; animation: aii-halo 2.8s ease-in-out infinite; }
+
+.btn-dark { transition: background .2s, border-color .2s, box-shadow .3s; }
+.btn-dark:hover, .btn-dark:focus-visible { box-shadow: 0 0 0 4px rgba(229, 72, 77, 0.16), 0 8px 28px rgba(229, 72, 77, 0.28); }
+.big-mail { text-shadow: 0 0 28px rgba(229, 72, 77, 0.18); }
+
+@keyframes aii-breathe {
+  0%, 100% { opacity: 0.55; transform: scale(0.94); }
+  50%      { opacity: 1;    transform: scale(1.04); }
+}
+@keyframes aii-halo {
+  0%, 100% { transform: scale(0.9); opacity: 0.18; }
+  50%      { transform: scale(1.7); opacity: 0.38; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero::before, .contact::before, .band::after, .mark-halo { animation: none; }
+}

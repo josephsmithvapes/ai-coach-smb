@@ -19,10 +19,11 @@ const STEPS = [
   { k: 'D.', title: 'Hand off', desc: 'Documentation and a walkthrough, so it keeps working without us.' },
 ];
 
-function Mark({ size = 28, stroke = '#141414' }) {
+function Mark({ size = 28, stroke = '#141414', glow = false }) {
   const w = size <= 18 ? 5 : 3.5;
   return (
-    <svg width={size} height={size} viewBox="0 0 40 40" aria-hidden="true">
+    <svg width={size} height={size} viewBox="0 0 40 40" aria-hidden="true" style={{ overflow: 'visible' }}>
+      {glow && <circle className="mark-halo" cx="20" cy="20" r="9" fill="var(--glow)" />}
       <circle cx="20" cy="20" r="11" fill="none" stroke={stroke} strokeWidth={w} />
       <path d="M20 1v8M20 31v8M1 20h8M31 20h8" stroke={stroke} strokeWidth={w} />
       <circle cx="20" cy="20" r={size <= 18 ? 5.5 : 4.6} fill="var(--accent)" />
@@ -83,7 +84,7 @@ export default function App() {
     <>
       <header className="header rule-b">
         <div className="wrap">
-          <a className="brand" href="#top" aria-label="aii.coach home"><Mark /><span>aii<span className="dot">.</span>coach</span></a>
+          <a className="brand" href="#top" aria-label="aii.coach home"><Mark glow /><span>aii<span className="dot">.</span>coach</span></a>
           <nav className="nav" aria-label="Main">
             <a href="#services">Services</a>
             <a href="#method">Method</a>
