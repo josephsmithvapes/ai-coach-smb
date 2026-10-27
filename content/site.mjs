@@ -13,7 +13,7 @@ export const SITE = {
   // Where you take clients. Add cities as you start serving them (e.g. 'Seattle', 'Portland').
   areas: ['Los Angeles', 'United States'],
   // Public profile links (LinkedIn company page, your LinkedIn, Google Business Profile…). Leave empty until they exist.
-  profiles: [],
+  profiles: ['https://www.linkedin.com/company/aii-coach/'],
 };
 
 export const SERVICES = [

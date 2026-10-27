@@ -7,9 +7,10 @@
     "dev": "node scripts/build-pages.mjs && vite",
     "build": "node scripts/build-pages.mjs && vite build",
     "preview": "vite preview",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build && npm run check",
     "deploy": "gh-pages -d dist",
-    "pages": "node scripts/build-pages.mjs"
+    "pages": "node scripts/build-pages.mjs",
+    "check": "node scripts/check-scores.mjs"
   },
   "dependencies": {},
   "devDependencies": {
