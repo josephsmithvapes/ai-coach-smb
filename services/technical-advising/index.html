@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Technical advising for small businesses | aii.coach</title>
+    <meta name="description" content="An independent, plain-English answer on what to build, buy, keep or switch off — before you spend money on it. Technical advising from aii.coach — fixed scope, plain English." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.aii.coach/services/technical-advising/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#F4F3EF" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="aii.coach" />
+    <meta property="og:title" content="Technical advising for small businesses | aii.coach" />
+    <meta property="og:description" content="An independent, plain-English answer on what to build, buy, keep or switch off — before you spend money on it. Technical advising from aii.coach — fixed scope, plain English." />
+    <meta property="og:url" content="https://www.aii.coach/services/technical-advising/" />
+    <meta property="og:image" content="https://www.aii.coach/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="aii.coach — Find the real problem. Fix it properly. Leave it running." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://www.aii.coach/og-image.png" />
+    <link rel="preload" href="/fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/plex-mono.woff2" as="font" type="font/woff2" crossorigin />
+    <style>
+      @font-face { font-family: 'Inter Tight'; font-style: normal; font-weight: 100 900; font-display: swap; src: url(/fonts/inter-tight.woff2) format('woff2'); }
+      @font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url(/fonts/plex-mono.woff2) format('woff2'); }
+
+      :root {
+        --paper: #F4F3EF; --ink: #141414; --ink-2: #3d3d3d; --ink-3: #4a4a4a; --accent: #C2410C; --glow: 229, 72, 77;
+        --mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+        --sans: 'Inter Tight', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      html, body { overflow-x: hidden; }
+      @supports (overflow: clip) { html, body { overflow-x: clip; } }
+      body { margin: 0; font-family: var(--sans); color: var(--ink); background: var(--paper); -webkit-font-smoothing: antialiased; }
+      a { color: var(--ink); }
+      a:hover { color: var(--accent); }
+      :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+      .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+      .eyebrow { font-family: var(--mono); font-size: 13px; text-transform: uppercase; letter-spacing: .08em; margin: 0 0 20px; }
+      .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+      /* header */
+      .header { border-bottom: 1px solid var(--ink); }
+      .header .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding-top: 16px; padding-bottom: 16px; }
+      .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 22px; letter-spacing: -.03em; text-decoration: none; }
+      .brand .dot { color: var(--accent); }
+      .nav { display: flex; flex-wrap: wrap; gap: 24px; font-family: var(--mono); font-size: 13px; text-transform: uppercase; letter-spacing: .06em; }
+      .nav a { text-decoration: none; padding: 12px 0; }
+
+      /* buttons */
+      .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; font: 600 16px var(--sans); text-decoration: none; border: 1px solid var(--ink); cursor: pointer; transition: background .2s, border-color .2s, color .2s, box-shadow .3s; }
+      .btn-dark { background: var(--ink); color: var(--paper); }
+      .btn-dark:hover, .btn-dark:focus-visible { background: var(--accent); border-color: var(--accent); color: var(--paper); box-shadow: 0 0 0 4px rgba(var(--glow), .16), 0 8px 28px rgba(var(--glow), .28); }
+      .btn-line { background: transparent; color: var(--ink); }
+      .btn-line:hover { background: var(--ink); color: var(--paper); }
+
+      /* hero */
+      .hero { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 48px; align-items: end; padding-top: 88px; padding-bottom: 72px; }
+      .hero h1 { margin: 0; font-size: clamp(44px, 6.4vw, 84px); line-height: .98; letter-spacing: -.035em; font-weight: 700; }
+      .hero .lede { margin: 0; font-size: 20px; line-height: 1.5; max-width: 30em; }
+      .hero .side { display: flex; flex-direction: column; gap: 28px; padding-bottom: 8px; }
+      .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+      /* services */
+      .services { border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+      .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); border-left: 1px solid var(--ink); margin: 0; padding: 0; list-style: none; }
+      .svc { border-right: 1px solid var(--ink); padding: 32px 22px 40px; display: flex; flex-direction: column; gap: 14px; }
+      .svc .num { font-family: var(--mono); font-size: 13px; color: var(--accent); }
+      .svc h3 { margin: 0; font-size: 22px; letter-spacing: -.01em; }
+      .svc-link { text-decoration: none; }
+      .svc-link::after { content: "\00a0→"; color: var(--accent); }
+      .svc { position: relative; }
+      .svc-link::before { content: ""; position: absolute; inset: 0; }
+      .svc:hover { background: #FBFAF7; }
+      .svc p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--ink-2); }
+      @media (max-width: 719px) { .svc { border-bottom: 1px solid var(--ink); } .svc:last-child { border-bottom: 0; } }
+
+      /* method */
+      .section { padding-top: 96px; padding-bottom: 96px; }
+      .section h2 { margin: 0 0 48px; font-size: clamp(32px, 4vw, 52px); letter-spacing: -.03em; line-height: 1.05; max-width: 16em; }
+      .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 24px; margin: 0; padding: 0; list-style: none; }
+      .step { border-top: 3px solid var(--ink); padding-top: 18px; }
+      .step.last { border-top-color: var(--accent); }
+      .step .k { font-family: var(--mono); font-size: 13px; margin-bottom: 10px; }
+      .step h3 { margin: 0 0 8px; font-size: 20px; }
+      .step p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--ink-2); }
+
+      /* founding clients */
+      .founding .box { border: 1px solid var(--ink); background: #FBFAF7; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); }
+      .founding .box > div { padding: 32px 28px; }
+      .founding .box > div + div { border-top: 1px solid var(--ink); }
+      @media (min-width: 760px) { .founding .box > div + div { border-top: 0; border-left: 1px solid var(--ink); } }
+      .founding .spots { display: flex; gap: 10px; margin: 18px 0 0; }
+      .founding .spot { width: 36px; height: 36px; border: 2px solid var(--accent); border-radius: 50%; display: grid; place-items: center; font: 600 14px var(--mono); color: var(--accent); }
+      .founding ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 14px; }
+      .founding li { display: grid; grid-template-columns: 28px 1fr; gap: 8px; font-size: 16px; line-height: 1.5; color: var(--ink-2); }
+      .founding li b { color: var(--ink); }
+      .founding li span:first-child { font: 13px var(--mono); color: var(--accent); padding-top: 3px; }
+
+      /* founder band: quote with its signature directly beneath */
+      .band { background: var(--ink); color: var(--paper); position: relative; overflow: hidden; isolation: isolate; }
+      .band .wrap { padding-top: 88px; padding-bottom: 88px; }
+      .band figure { margin: 0; max-width: 820px; }
+      .band blockquote { margin: 0; }
+      .band blockquote p { margin: 0; font-size: clamp(26px, 3vw, 40px); line-height: 1.25; letter-spacing: -.02em; }
+      .band figcaption { margin-top: 32px; display: flex; align-items: center; gap: 14px; font-family: var(--mono); font-size: 14px; color: #d4d2cb; }
+      .band figcaption::before { content: ""; width: 32px; height: 2px; background: var(--accent); flex: none; }
+
+      /* contact */
+      .contact { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 56px; padding-top: 96px; padding-bottom: 80px; align-items: start; }
+      .big-mail { display: inline-block; font-size: clamp(36px, 6vw, 80px); font-weight: 700; letter-spacing: -.04em; line-height: 1; text-decoration: none; border-bottom: 6px solid var(--accent); overflow-wrap: anywhere; text-shadow: 0 0 28px rgba(var(--glow), .18); }
+      .contact .note { margin: 28px 0 0; font-size: 18px; line-height: 1.5; color: var(--ink-2); max-width: 30em; }
+      .form { border: 1px solid var(--ink); padding: 28px; display: flex; flex-direction: column; gap: 16px; background: #FBFAF7; }
+      .form h3 { margin: 0; font-size: 22px; }
+      .field { display: flex; flex-direction: column; gap: 6px; }
+      .field label { font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
+      .field input, .field select, .field textarea { font: 16px var(--sans); color: var(--ink); background: #fff; border: 1px solid var(--ink); border-radius: 0; padding: 12px; min-height: 48px; }
+      .field textarea { min-height: 128px; resize: vertical; }
+      .form .msg { margin: 0; font-size: 16px; line-height: 1.5; }
+      .form .err { color: #B91C1C; font-size: 15px; }
+      .form[hidden], .msg[hidden] { display: none; }
+
+      /* footer */
+      .footer { border-top: 1px solid var(--ink); }
+      .footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 20px; padding-bottom: 20px; font-family: var(--mono); font-size: 12px; color: var(--ink-3); }
+      .footer .left { display: inline-flex; align-items: center; gap: 8px; }
+
+      /* ── Soft red glow: slow breathing plus a lazy drift; composited (opacity, scale, translate) only ── */
+      .hero, .contact { position: relative; isolation: isolate; }
+      .hero::before, .contact::before, .band::after {
+        content: ""; position: absolute; z-index: -1; pointer-events: none; border-radius: 50%; aspect-ratio: 1; will-change: opacity, scale, translate;
+      }
+      .hero::before {
+        width: min(78vw, 760px); right: -12%; top: -6%;
+        background: radial-gradient(closest-side, rgba(var(--glow), .22), rgba(var(--glow), .08) 55%, transparent);
+        animation: aii-breathe 7s ease-in-out infinite, aii-drift-a 26s ease-in-out infinite alternate;
+      }
+      .contact::before {
+        width: min(70vw, 560px); left: -10%; top: 10%;
+        background: radial-gradient(closest-side, rgba(var(--glow), .2), rgba(var(--glow), .07) 55%, transparent);
+        animation: aii-breathe 8s ease-in-out -3.5s infinite, aii-drift-b 31s ease-in-out infinite alternate;
+      }
+      .band::after {
+        width: min(60vw, 520px); right: -8%; bottom: -55%;
+        background: radial-gradient(closest-side, rgba(var(--glow), .3), transparent);
+        animation: aii-breathe 9s ease-in-out -2s infinite, aii-drift-c 34s ease-in-out infinite alternate;
+      }
+      @keyframes aii-breathe { 0%, 100% { opacity: .55; scale: .94; } 50% { opacity: 1; scale: 1.05; } }
+      @keyframes aii-drift-a { 0% { translate: 0 0; } 50% { translate: -7% 5%; } 100% { translate: 4% -4%; } }
+      @keyframes aii-drift-b { 0% { translate: 0 0; } 50% { translate: 8% -6%; } 100% { translate: -3% 5%; } }
+      @keyframes aii-drift-c { 0% { translate: 0 0; } 50% { translate: -18% -10%; } 100% { translate: -6% 6%; } }
+
+      /* Logo: the signal broadcasts softly — each wave brightens in turn, rising out of the whistle */
+      .mark-arc { animation: aii-wave 2.8s ease-in-out infinite; }
+      .mark-arc.a2 { animation-delay: .35s; }
+      .mark-arc.a3 { animation-delay: .7s; }
+      @keyframes aii-wave { 0%, 60%, 100% { opacity: 1; } 25% { opacity: .35; } }
+
+      /* Motion starts once the page has settled (first interaction, or a few seconds after load). */
+      html:not(.live) .hero::before, html:not(.live) .contact::before, html:not(.live) .band::after, html:not(.live) .mark-arc { animation-play-state: paused; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .hero::before, .contact::before, .band::after, .mark-arc { animation: none; }
+        html { scroll-behavior: auto; }
+      }
+    
+      .crumbs { font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-3); padding-top: 28px; }
+      .crumbs a { text-decoration: none; color: var(--ink-3); }
+      .crumbs a:hover { color: var(--accent); }
+      .page-hero { padding-top: 40px; padding-bottom: 56px; }
+      .page-hero > *, .faq > * { max-width: 900px; }
+      .page-hero h1 { margin: 0; font-size: clamp(36px, 5vw, 64px); line-height: 1.02; letter-spacing: -.035em; }
+      .page-hero .lede { margin: 22px 0 0; font-size: 20px; line-height: 1.5; color: var(--ink-2); max-width: 34em; }
+      .two { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+      .two > div { padding: 40px 24px 44px 0; }
+      .two > div + div { border-top: 1px solid var(--ink); padding-left: 0; }
+      @media (min-width: 820px) { .two > div + div { border-top: 0; border-left: 1px solid var(--ink); padding-left: 32px; } }
+      .two h2, .faq h2 { margin: 0 0 18px; font-size: 26px; letter-spacing: -.02em; }
+      .ticks { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+      .ticks li { display: grid; grid-template-columns: 22px 1fr; gap: 8px; font-size: 17px; line-height: 1.5; color: var(--ink-2); }
+      .ticks li::before { content: "—"; color: var(--accent); font-family: var(--mono); }
+      .faq { padding-top: 72px; padding-bottom: 24px; }
+      .faq details { border-top: 1px solid var(--ink); padding: 18px 0; }
+      .faq details:last-of-type { border-bottom: 1px solid var(--ink); }
+      .faq summary { cursor: pointer; font-size: 19px; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+      .faq summary::-webkit-details-marker { display: none; }
+      .faq summary::after { content: "+"; font-family: var(--mono); color: var(--accent); }
+      .faq details[open] summary::after { content: "–"; }
+      .faq details p { margin: 12px 0 0; font-size: 17px; line-height: 1.6; color: var(--ink-2); max-width: 44em; }
+      .cta { background: var(--ink); color: var(--paper); margin-top: 72px; }
+      .cta .wrap { padding-top: 64px; padding-bottom: 64px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+      .cta h2 { margin: 0; font-size: clamp(28px, 3.4vw, 44px); letter-spacing: -.03em; max-width: 16em; }
+      .cta .btn-dark { background: var(--accent); border-color: var(--accent); }
+      .more { padding-top: 56px; padding-bottom: 72px; }
+      .more ul { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 12px; }
+      .more a { display: block; border: 1px solid var(--ink); padding: 16px 18px; text-decoration: none; font-weight: 600; min-height: 48px; }
+      .more a:hover { background: var(--ink); color: var(--paper); }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ProfessionalService","@id":"https://www.aii.coach/#org","name":"aii.coach","url":"https://www.aii.coach/","email":"sky@aii.coach","logo":"https://www.aii.coach/og-logo.png","image":"https://www.aii.coach/og-image.png","description":"Hands-on tech advisor for small teams: technical advising, implementation, operational root-causing, systems and administrative support.","slogan":"Find the real problem. Fix it properly. Leave it running.","founder":{"@id":"https://www.aii.coach/#sky"},"address":{"@type":"PostalAddress","addressLocality":"Los Angeles","addressRegion":"CA","addressCountry":"US"},"areaServed":[{"@type":"City","name":"Los Angeles"},{"@type":"Country","name":"United States"}],"knowsAbout":["IT for small businesses","website performance on mobile","business systems","process improvement","software implementation","IT administration"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Technical advising","url":"https://www.aii.coach/services/technical-advising/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Implementation","url":"https://www.aii.coach/services/implementation/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Operational root-causing","url":"https://www.aii.coach/services/operational-root-causing/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Systems","url":"https://www.aii.coach/services/systems/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Administrative support","url":"https://www.aii.coach/services/administrative-support/"}}]}},{"@type":"Person","@id":"https://www.aii.coach/#sky","name":"Sky Madsen","jobTitle":"Fractional IT & systems lead","worksFor":{"@id":"https://www.aii.coach/#org"},"email":"sky@aii.coach","url":"https://www.aii.coach/"},{"@type":"Service","@id":"https://www.aii.coach/services/technical-advising/#service","name":"Technical advising","serviceType":"Technical advising","description":"An independent, plain-English answer on what to build, buy, keep or switch off — before you spend money on it.","url":"https://www.aii.coach/services/technical-advising/","provider":{"@id":"https://www.aii.coach/#org"},"areaServed":[{"@type":"City","name":"Los Angeles"},{"@type":"Country","name":"United States"}],"audience":{"@type":"BusinessAudience","name":"Small businesses"}},{"@type":"FAQPage","@id":"https://www.aii.coach/services/technical-advising/#faq","mainEntity":[{"@type":"Question","name":"Do you sell software or take commissions?","acceptedAnswer":{"@type":"Answer","text":"No. I don’t resell tools or take referral fees, so the recommendation is based only on what fits your business."}},{"@type":"Question","name":"Can you review a quote we already have?","acceptedAnswer":{"@type":"Answer","text":"Yes. Reviewing a developer’s or agency’s quote is one of the most common requests, and it usually takes a few days."}},{"@type":"Question","name":"What if the answer is “don’t buy anything”?","acceptedAnswer":{"@type":"Answer","text":"Then that is the recommendation. Keeping what you have and using it properly is often the cheapest fix."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"aii.coach","item":"https://www.aii.coach/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.aii.coach/#services"},{"@type":"ListItem","position":3,"name":"Technical advising","item":"https://www.aii.coach/services/technical-advising/"}]}]}</script>
+    <script type="module" crossorigin src="/assets/main-699331c9.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="wrap">
+        <a class="brand" href="/" aria-label="aii.coach home">
+          <svg width="38" height="38" viewBox="0 0 64 64" aria-hidden="true" style="margin:-4px 0"><defs><mask id="hn" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64"><rect width="64" height="64" fill="#fff" /><path d="M34.5 27 H45.5 V36.5 Z" fill="#000" /></mask></defs><g mask="url(#hn)" fill="#141414"><rect x="6" y="30" width="32" height="10" rx="2" /><circle cx="40" cy="44" r="15" /></g><circle cx="56" cy="32" r="4" fill="none" stroke="#141414" stroke-width="3" /><g fill="none" stroke="#C2410C" stroke-width="3.5" stroke-linecap="round"><path class="mark-arc a1" d="M35.05 19.05 A7 7 0 0 1 44.95 19.05" /><path class="mark-arc a2" d="M30.81 14.81 A13 13 0 0 1 49.19 14.81" /><path class="mark-arc a3" d="M26.57 10.57 A19 19 0 0 1 53.43 10.57" /></g></svg>
+          <span>aii<span class="dot">.</span>coach</span>
+        </a>
+        <nav class="nav" aria-label="Main">
+          <a href="/#services">Services</a>
+          <a href="/faq/">FAQ</a>
+          <a href="/#founding">Founding</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="wrap crumbs"><a href="/">aii.coach</a> / <a href="/#services">Services</a> / Technical advising</div>
+      <section class="wrap page-hero">
+        <p class="eyebrow">§ Service 01 — Technical advising</p>
+        <h1>Technical advising for small businesses</h1>
+        <p class="lede">An independent, plain-English answer on what to build, buy, keep or switch off — before you spend money on it.</p>
+        <div class="actions" style="margin-top:28px"><a class="btn btn-dark" href="/#contact">Book a free 30-minute call</a></div>
+      </section>
+      <section class="wrap" aria-label="Who it's for and what it fixes">
+        <div class="two">
+          <div><h2>Who it’s for</h2><ul class="ticks"><li>Owners and managers about to pick new software, a new website platform, or a new tool for the team.</li><li>Teams paying for subscriptions nobody is sure they still need.</li><li>Businesses getting quotes from developers or agencies and wanting a second opinion they can trust.</li></ul></div>
+          <div><h2>Problems it fixes</h2><ul class="ticks"><li>Too many tools that overlap, and monthly bills that keep growing.</li><li>Big decisions made on a sales demo instead of how your team actually works.</li><li>Quotes that are hard to compare because nobody explains the trade-offs.</li><li>Projects that start without a clear goal, so they never quite finish.</li></ul></div>
+        </div>
+      </section>
+      <section class="wrap section" aria-labelledby="how-h">
+        <p class="eyebrow">How it works</p>
+        <h2 id="how-h">What happens, step by step.</h2>
+        <ol class="steps">
+          <li class="step"><div class="k">A.</div><h3>Talk</h3><p>A free 30-minute call about the decision in front of you and what is driving it.</p></li>
+          <li class="step"><div class="k">B.</div><h3>Look</h3><p>I review what you use today, what it costs, and how the work really flows.</p></li>
+          <li class="step"><div class="k">C.</div><h3>Recommend</h3><p>A short written recommendation: options, trade-offs and what I would do, in plain English.</p></li>
+          <li class="step last"><div class="k">D.</div><h3>Decide</h3><p>You decide. If you want help putting it in place, that becomes a fixed-scope project.</p></li>
+        </ol>
+      </section>
+      <section class="wrap faq" aria-labelledby="faq-h">
+        <h2 id="faq-h">Technical advising: questions</h2>
+        <details open><summary>Do you sell software or take commissions?</summary><p>No. I don’t resell tools or take referral fees, so the recommendation is based only on what fits your business.</p></details>
+        <details><summary>Can you review a quote we already have?</summary><p>Yes. Reviewing a developer’s or agency’s quote is one of the most common requests, and it usually takes a few days.</p></details>
+        <details><summary>What if the answer is “don’t buy anything”?</summary><p>Then that is the recommendation. Keeping what you have and using it properly is often the cheapest fix.</p></details>
+      </section>
+      <section class="cta" aria-label="Get in touch">
+        <div class="wrap">
+          <h2>Not sure this is the right fit? Tell me what’s going on.</h2>
+          <div class="actions">
+            <a class="btn btn-dark" href="/#contact">Book a free 30-minute call</a>
+            <a class="btn btn-line" style="color:var(--paper);border-color:var(--paper)" href="mailto:sky@aii.coach">sky@aii.coach</a>
+          </div>
+        </div>
+      </section>
+      <section class="wrap more" aria-labelledby="more-h">
+        <p class="eyebrow" id="more-h">Other services</p>
+        <ul><li><a href="/services/implementation/">Implementation →</a></li><li><a href="/services/operational-root-causing/">Operational root-causing →</a></li><li><a href="/services/systems/">Systems →</a></li><li><a href="/services/administrative-support/">Administrative support →</a></li><li><a href="/faq/">Common questions →</a></li></ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <span class="left">
+          <svg width="18" height="18" viewBox="0 0 64 64" aria-hidden="true"><defs><mask id="fn" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64"><rect width="64" height="64" fill="#fff" /><path d="M34.5 27 H45.5 V36.5 Z" fill="#000" /></mask></defs><g mask="url(#fn)" fill="#4a4a4a"><rect x="6" y="30" width="32" height="10" rx="2" /><circle cx="40" cy="44" r="15" /></g><circle cx="56" cy="32" r="4" fill="none" stroke="#4a4a4a" stroke-width="3" /><g fill="none" stroke="#C2410C" stroke-width="3.5" stroke-linecap="round"><path d="M35.05 19.05 A7 7 0 0 1 44.95 19.05" /><path d="M30.81 14.81 A13 13 0 0 1 49.19 14.81" /><path d="M26.57 10.57 A19 19 0 0 1 53.43 10.57" /></g></svg>
+          © 2026 aii.coach
+        </span>
+        <span>Los Angeles, CA · Remote</span>
+      </div>
+    </footer>
+
+    
+  </body>
+</html>
