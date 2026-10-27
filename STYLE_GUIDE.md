@@ -1,16 +1,23 @@
-# Design System: Quiet Authority
+# Design System: Field Manual
 
-## 🎨 Palette
-- Midnight Navy (#0F172A): Primary Text & Dark UI
-- Electric Cobalt (#2E5BFF): Interactive elements/links
-- Slate Soft (#F8F9FA): Section backgrounds
-- Sage Success (#CCD5AE): Accents for growth/data stats
+## Palette
+- Paper (#F4F3EF): page background
+- Ink (#141414): text, rules, primary buttons
+- Ink 2 (#3D3D3D): body copy on paper
+- Signal Orange (#C2410C): the one accent — logo dot, section numbers, underlines, hover
 
-## 📱 Responsiveness
-- **Desktop (1024px+):** 3-column grids, 4rem headings.
-- **Tablet (768px - 1023px):** 2-column grids, 3rem headings.
-- **Phone (0px - 767px):** Single column, 2rem headings, touch-optimized buttons (min 44px height).
+## Logo
+- "Trace" mark: a reticle (ring + four ticks) locked on an orange dot — finding the real cause.
+- Wordmark: `aii.coach` in Inter Tight Bold, the `.` in Signal Orange. Favicon: `public/favicon.svg`.
 
-## ✍️ Typography
-- Headings: Inter (Bold, -0.02em letter spacing)
-- Body: Roboto (Regular, 1.6 line height)
+## Typography
+- Headings and body: Inter Tight (400–700), tight negative tracking on headings
+- Labels, numbers, nav: IBM Plex Mono, uppercase, +0.06–0.08em tracking
+
+## Layout
+- 1px ink rules between sections; numbered sections (§ 01, § 02…)
+- Grids use `auto-fit` + `minmax`, so they collapse to one column on phones
+- Buttons and inputs at least 48px tall
+
+## Voice
+- Plain English, no jargon. No prices on the site.
