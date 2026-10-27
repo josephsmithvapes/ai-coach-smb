@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
 
+// Plain static page: no framework, one small script for the contact form.
 export default defineConfig({
-  plugins: [react()],
   base: '/',
+  build: { assetsInlineLimit: 0, modulePreload: false },
 })
