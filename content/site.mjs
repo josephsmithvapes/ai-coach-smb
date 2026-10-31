@@ -14,6 +14,9 @@ export const SITE = {
   areas: ['Los Angeles', 'United States'],
   // Public profile links (LinkedIn company page, your LinkedIn, Google Business Profile…). Leave empty until they exist.
   profiles: ['https://www.linkedin.com/company/aii-coach/'],
+  // Sky's own profiles (personal LinkedIn…) and credentials, shown on his Person entry for search engines.
+  founderProfiles: ['https://www.linkedin.com/in/moleculardeveloper/'],
+  credentials: [{ name: 'Google AI Professional Certificate', by: 'Google' }],
 };
 
 export const SERVICES = [

@@ -84,6 +84,11 @@ export function orgGraph() {
       worksFor: { '@id': ORG_ID },
       email: SITE.email,
       url: abs('/'),
+      ...(SITE.founderProfiles?.length ? { sameAs: SITE.founderProfiles } : {}),
+      ...(SITE.credentials?.length ? { hasCredential: SITE.credentials.map((c) => ({
+        '@type': 'EducationalOccupationalCredential', name: c.name, credentialCategory: 'certificate',
+        recognizedBy: { '@type': 'Organization', name: c.by },
+      })) } : {}),
     },
   ];
 }
