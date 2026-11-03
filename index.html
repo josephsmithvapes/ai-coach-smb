@@ -129,6 +129,24 @@
       .form .err { color: #B91C1C; font-size: 15px; }
       .form[hidden], .msg[hidden] { display: none; }
 
+      /* deployments tree */
+      .tree { list-style: none; margin: 28px 0 0; padding: 0 0 0 18px; border-left: 2px solid var(--ink); display: grid; gap: 18px; }
+      .tree li { position: relative; padding-left: 22px; }
+      .tree li::before { content: ""; position: absolute; left: -18px; top: 28px; width: 40px; height: 2px; background: var(--ink); }
+      .tree li::after { content: ""; position: absolute; left: 19px; top: 23px; width: 12px; height: 12px; background: var(--accent); }
+      .tree a { display: grid; grid-template-columns: 168px 1fr; gap: 18px; align-items: center; margin-left: 20px; max-width: 560px; padding: 10px; border: 1px solid var(--ink); background: #fff; color: var(--ink); text-decoration: none; }
+      .tree a:hover, .tree a:focus-visible { border-color: var(--accent); }
+      .tree .shot { display: block; width: 168px; height: 105px; background: var(--paper); border: 1px solid #d9d7d0; object-fit: cover; }
+      .tree .shot-none { display: grid; place-items: center; font: 12px var(--mono); color: var(--ink-3); }
+      .tree a > span:last-child { min-width: 0; }
+      .tree b { display: block; font-size: 18px; overflow-wrap: anywhere; }
+      .tree small { display: block; margin-top: 4px; font: 13px var(--mono); color: var(--ink-3); }
+      @media (max-width: 520px) { .tree a { grid-template-columns: 96px 1fr; gap: 12px; } .tree .shot { width: 96px; height: 60px; } .tree .shot-none { font-size: 0; } .tree b { font-size: 15px; } .tree li { padding-left: 14px; } .tree a { margin-left: 12px; } }
+      /* chat button (the chat itself loads only when tapped) */
+      .chat-launch { position: fixed; right: 16px; bottom: 16px; z-index: 50; display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 6px 16px 6px 6px; border: 0; border-radius: 999px; background: var(--ink); color: var(--paper); font: 600 14px var(--sans); cursor: pointer; box-shadow: 0 6px 24px rgba(0,0,0,.2); }
+      .chat-launch img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+      .chat-launch:hover, .chat-launch:focus-visible { background: var(--accent); }
+      @media (max-width: 520px) { .chat-launch { padding: 6px; } .chat-launch span { display: none; } }
       /* footer */
       .footer { border-top: 1px solid var(--ink); }
       .footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 20px; padding-bottom: 20px; font-family: var(--mono); font-size: 12px; color: var(--ink-3); }
@@ -175,7 +193,7 @@
     </style>
 
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ProfessionalService","@id":"https://www.aii.coach/#org","name":"aii.coach","url":"https://www.aii.coach/","email":"sky@aii.coach","logo":"https://www.aii.coach/og-logo.png","image":"https://www.aii.coach/og-image.png","description":"Hands-on tech advisor for small teams: technical advising, implementation, operational root-causing, systems and administrative support.","slogan":"Find the real problem. Fix it properly. Leave it running.","founder":{"@id":"https://www.aii.coach/#sky"},"address":{"@type":"PostalAddress","addressLocality":"Los Angeles","addressRegion":"CA","addressCountry":"US"},"areaServed":[{"@type":"City","name":"Los Angeles"},{"@type":"Country","name":"United States"}],"knowsAbout":["IT for small businesses","website performance on mobile","business systems","process improvement","software implementation","IT administration"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Technical advising","url":"https://www.aii.coach/services/technical-advising/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Implementation","url":"https://www.aii.coach/services/implementation/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Operational root-causing","url":"https://www.aii.coach/services/operational-root-causing/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Systems","url":"https://www.aii.coach/services/systems/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Administrative support","url":"https://www.aii.coach/services/administrative-support/"}}]},"sameAs":["https://www.linkedin.com/company/aii-coach/"]},{"@type":"Person","@id":"https://www.aii.coach/#sky","name":"Sky Madsen","jobTitle":"Fractional IT & systems lead","worksFor":{"@id":"https://www.aii.coach/#org"},"email":"sky@aii.coach","url":"https://www.aii.coach/","sameAs":["https://www.linkedin.com/in/moleculardeveloper/"],"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"Google AI Professional Certificate","credentialCategory":"certificate","recognizedBy":{"@type":"Organization","name":"Google"}}]},{"@type":"WebSite","@id":"https://www.aii.coach/#site","url":"https://www.aii.coach/","name":"aii.coach","publisher":{"@id":"https://www.aii.coach/#org"}}]}</script>
-    <script type="module" crossorigin src="/assets/main-699331c9.js"></script>
+    <script type="module" crossorigin src="/assets/main-2a63ce65.js"></script>
   </head>
   <body>
     <header class="header">
@@ -237,14 +255,14 @@
         <h2 id="founding-h">Three founding client spots.</h2>
         <div class="box">
           <div>
-            <p style="margin:0;font-size:20px;line-height:1.5">I'm taking on three founding clients at a reduced rate. Same scope, same care — you're just early.</p>
+            <p style="margin:0;font-size:20px;line-height:1.5">We're taking on three founding clients at a reduced rate. Same scope, same care — you're just early.</p>
             <div class="spots" aria-label="Three spots"><span class="spot">1</span><span class="spot">2</span><span class="spot">3</span></div>
             <div class="actions" style="margin-top:24px"><a class="btn btn-dark" href="mailto:sky@aii.coach?subject=Founding%20client%20spot">Ask about a founding spot</a></div>
           </div>
           <div>
             <ul>
               <li><span>01</span><span><b>You get</b> the full engagement — diagnosis, fix and handover — at a founding rate.</span></li>
-              <li><span>02</span><span><b>I get</b> a short testimonial and a before-and-after case study I can share.</span></li>
+              <li><span>02</span><span><b>We get</b> a short testimonial and a before-and-after case study we can share.</span></li>
               <li><span>03</span><span><b>We agree</b> the scope and price in writing before anything starts.</span></li>
             </ul>
           </div>
@@ -297,6 +315,11 @@
           </div>
         </div>
       </section>
+      <!-- deploys --><section id="deployments" class="wrap section" aria-labelledby="deploy-h">
+        <p class="eyebrow">§ 05 — Deployments</p>
+        <h2 id="deploy-h">Past and current work.</h2>
+        <ul class="tree"><li><a href="https://www.somebodystolethat.com" target="_blank" rel="noopener"><img class="shot" src="/deploys/somebodystolethat.webp" width="168" height="105" alt="Screenshot of somebodystolethat.com" loading="lazy" decoding="async" /><span><b>somebodystolethat.com</b><small>Visit site →</small></span></a></li><li><a href="https://www.verifiedbysky.com" target="_blank" rel="noopener"><img class="shot" src="/deploys/verifiedbysky.webp" width="168" height="105" alt="Screenshot of verifiedbysky.com" loading="lazy" decoding="async" /><span><b>verifiedbysky.com</b><small>Visit site →</small></span></a></li><li><a href="https://hermesgwermes.com" target="_blank" rel="noopener"><img class="shot" src="/deploys/hermesgwermes.webp" width="168" height="105" alt="Screenshot of hermesgwermes.com" loading="lazy" decoding="async" /><span><b>hermesgwermes.com</b><small>Visit site →</small></span></a></li></ul>
+      </section><!-- /deploys -->
     </main>
 
     <footer class="footer">
@@ -309,6 +332,7 @@
         <span>LinkedIn: <a href="https://www.linkedin.com/in/moleculardeveloper/" rel="me noopener" style="color:inherit">Sky Madsen</a> · <a href="https://www.linkedin.com/company/aii-coach/" rel="me noopener" style="color:inherit">aii.coach</a></span>
         <span>Los Angeles, CA · Remote</span>
       </div>
+      <button class="chat-launch" type="button" aria-haspopup="dialog" aria-expanded="false" aria-label="Questions? Chat with Sky's AI assistant"><img src="/sky.webp" width="36" height="36" alt="" decoding="async" /><span>Questions?</span></button>
     </footer>
 
     

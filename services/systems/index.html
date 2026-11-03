@@ -125,6 +125,24 @@
       .form .err { color: #B91C1C; font-size: 15px; }
       .form[hidden], .msg[hidden] { display: none; }
 
+      /* deployments tree */
+      .tree { list-style: none; margin: 28px 0 0; padding: 0 0 0 18px; border-left: 2px solid var(--ink); display: grid; gap: 18px; }
+      .tree li { position: relative; padding-left: 22px; }
+      .tree li::before { content: ""; position: absolute; left: -18px; top: 28px; width: 40px; height: 2px; background: var(--ink); }
+      .tree li::after { content: ""; position: absolute; left: 19px; top: 23px; width: 12px; height: 12px; background: var(--accent); }
+      .tree a { display: grid; grid-template-columns: 168px 1fr; gap: 18px; align-items: center; margin-left: 20px; max-width: 560px; padding: 10px; border: 1px solid var(--ink); background: #fff; color: var(--ink); text-decoration: none; }
+      .tree a:hover, .tree a:focus-visible { border-color: var(--accent); }
+      .tree .shot { display: block; width: 168px; height: 105px; background: var(--paper); border: 1px solid #d9d7d0; object-fit: cover; }
+      .tree .shot-none { display: grid; place-items: center; font: 12px var(--mono); color: var(--ink-3); }
+      .tree a > span:last-child { min-width: 0; }
+      .tree b { display: block; font-size: 18px; overflow-wrap: anywhere; }
+      .tree small { display: block; margin-top: 4px; font: 13px var(--mono); color: var(--ink-3); }
+      @media (max-width: 520px) { .tree a { grid-template-columns: 96px 1fr; gap: 12px; } .tree .shot { width: 96px; height: 60px; } .tree .shot-none { font-size: 0; } .tree b { font-size: 15px; } .tree li { padding-left: 14px; } .tree a { margin-left: 12px; } }
+      /* chat button (the chat itself loads only when tapped) */
+      .chat-launch { position: fixed; right: 16px; bottom: 16px; z-index: 50; display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 6px 16px 6px 6px; border: 0; border-radius: 999px; background: var(--ink); color: var(--paper); font: 600 14px var(--sans); cursor: pointer; box-shadow: 0 6px 24px rgba(0,0,0,.2); }
+      .chat-launch img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+      .chat-launch:hover, .chat-launch:focus-visible { background: var(--accent); }
+      @media (max-width: 520px) { .chat-launch { padding: 6px; } .chat-launch span { display: none; } }
       /* footer */
       .footer { border-top: 1px solid var(--ink); }
       .footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 20px; padding-bottom: 20px; font-family: var(--mono); font-size: 12px; color: var(--ink-3); }
@@ -202,7 +220,7 @@
       .more a:hover { background: var(--ink); color: var(--paper); }
     </style>
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ProfessionalService","@id":"https://www.aii.coach/#org","name":"aii.coach","url":"https://www.aii.coach/","email":"sky@aii.coach","logo":"https://www.aii.coach/og-logo.png","image":"https://www.aii.coach/og-image.png","description":"Hands-on tech advisor for small teams: technical advising, implementation, operational root-causing, systems and administrative support.","slogan":"Find the real problem. Fix it properly. Leave it running.","founder":{"@id":"https://www.aii.coach/#sky"},"address":{"@type":"PostalAddress","addressLocality":"Los Angeles","addressRegion":"CA","addressCountry":"US"},"areaServed":[{"@type":"City","name":"Los Angeles"},{"@type":"Country","name":"United States"}],"knowsAbout":["IT for small businesses","website performance on mobile","business systems","process improvement","software implementation","IT administration"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Technical advising","url":"https://www.aii.coach/services/technical-advising/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Implementation","url":"https://www.aii.coach/services/implementation/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Operational root-causing","url":"https://www.aii.coach/services/operational-root-causing/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Systems","url":"https://www.aii.coach/services/systems/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Administrative support","url":"https://www.aii.coach/services/administrative-support/"}}]},"sameAs":["https://www.linkedin.com/company/aii-coach/"]},{"@type":"Person","@id":"https://www.aii.coach/#sky","name":"Sky Madsen","jobTitle":"Fractional IT & systems lead","worksFor":{"@id":"https://www.aii.coach/#org"},"email":"sky@aii.coach","url":"https://www.aii.coach/","sameAs":["https://www.linkedin.com/in/moleculardeveloper/"],"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"Google AI Professional Certificate","credentialCategory":"certificate","recognizedBy":{"@type":"Organization","name":"Google"}}]},{"@type":"Service","@id":"https://www.aii.coach/services/systems/#service","name":"Systems","serviceType":"Systems","description":"Your tools, data and daily routines designed as one system — shaped around how your people actually work.","url":"https://www.aii.coach/services/systems/","provider":{"@id":"https://www.aii.coach/#org"},"areaServed":[{"@type":"City","name":"Los Angeles"},{"@type":"Country","name":"United States"}],"audience":{"@type":"BusinessAudience","name":"Small businesses"}},{"@type":"FAQPage","@id":"https://www.aii.coach/services/systems/#faq","mainEntity":[{"@type":"Question","name":"Do we need to replace our current software?","acceptedAnswer":{"@type":"Answer","text":"Usually not. Most of the gain comes from connecting and simplifying what you already have."}},{"@type":"Question","name":"Can you automate repetitive tasks?","acceptedAnswer":{"@type":"Answer","text":"Yes. Copying data between tools, reminders, follow-ups and routine reports are the most common things automated."}},{"@type":"Question","name":"Will it be too complicated for my team?","acceptedAnswer":{"@type":"Answer","text":"No — if it’s too complicated for your team, it isn’t finished. Simple to use is part of the brief."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"aii.coach","item":"https://www.aii.coach/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.aii.coach/#services"},{"@type":"ListItem","position":3,"name":"Systems","item":"https://www.aii.coach/services/systems/"}]}]}</script>
-    <script type="module" crossorigin src="/assets/main-699331c9.js"></script>
+    <script type="module" crossorigin src="/assets/main-2a63ce65.js"></script>
   </head>
   <body>
     <header class="header">
@@ -238,7 +256,7 @@
         <h2 id="how-h">What happens, step by step.</h2>
         <ol class="steps">
           <li class="step"><div class="k">A.</div><h3>Understand</h3><p>We map the jobs your business does every day and the information each one needs.</p></li>
-          <li class="step"><div class="k">B.</div><h3>Design</h3><p>I design a simple setup: which tool owns what, and how information moves between them.</p></li>
+          <li class="step"><div class="k">B.</div><h3>Design</h3><p>We design a simple setup: which tool owns what, and how information moves between them.</p></li>
           <li class="step"><div class="k">C.</div><h3>Build</h3><p>We set it up, connect it, and automate the repetitive steps.</p></li>
           <li class="step last"><div class="k">D.</div><h3>Document</h3><p>A short guide your team can follow, so the system outlasts any one person.</p></li>
         </ol>
@@ -251,7 +269,7 @@
       </section>
       <section class="cta" aria-label="Get in touch">
         <div class="wrap">
-          <h2>Not sure this is the right fit? Tell me what’s going on.</h2>
+          <h2>Not sure this is the right fit? Tell us what’s going on.</h2>
           <div class="actions">
             <a class="btn btn-dark" href="/#contact">Book a free 30-minute call</a>
             <a class="btn btn-line" style="color:var(--paper);border-color:var(--paper)" href="mailto:sky@aii.coach">sky@aii.coach</a>
@@ -274,6 +292,7 @@
         <span>LinkedIn: <a href="https://www.linkedin.com/in/moleculardeveloper/" rel="me noopener" style="color:inherit">Sky Madsen</a> · <a href="https://www.linkedin.com/company/aii-coach/" rel="me noopener" style="color:inherit">aii.coach</a></span>
         <span>Los Angeles, CA · Remote</span>
       </div>
+      <button class="chat-launch" type="button" aria-haspopup="dialog" aria-expanded="false" aria-label="Questions? Chat with Sky's AI assistant"><img src="/sky.webp" width="36" height="36" alt="" decoding="async" /><span>Questions?</span></button>
     </footer>
 
     
