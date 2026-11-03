@@ -3,6 +3,7 @@ const API = 'https://watch.aii.coach/chat';
 const KEY = 'aii-chat';
 
 const css = `
+.chat[hidden]{display:none}
 .chat{position:fixed;z-index:60;right:16px;bottom:16px;width:min(390px,calc(100vw - 32px));height:min(600px,calc(100dvh - 32px));display:flex;flex-direction:column;background:var(--paper);color:var(--ink);border:1px solid var(--ink);box-shadow:0 18px 60px rgba(0,0,0,.22);font-family:var(--sans)}
 @media (max-width:520px){.chat{inset:0;width:100%;height:100dvh;border:0}}
 .chat-head{display:flex;align-items:center;gap:10px;padding:10px 12px;border-bottom:1px solid var(--ink);background:var(--ink);color:var(--paper)}

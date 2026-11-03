@@ -16,9 +16,9 @@ export const SITE = {
   profiles: ['https://www.linkedin.com/company/aii-coach/'],
   // Sky's own profiles (personal LinkedIn…) and credentials, shown on his Person entry for search engines.
   founderProfiles: ['https://www.linkedin.com/in/moleculardeveloper/'],
-  credentials: [{ name: 'Google AI Professional Certificate', by: 'Google' }],
+  credentials: [{ name: 'Google AI Professional', by: 'Google' }],
   // The thin "Past / current deployments" bar under the header on every page.
-  deployments: ['https://www.somebodystolethat.com', 'https://www.verifiedbysky.com', 'https://hermesgwermes.com'],
+  deployments: ['https://www.somebodystolethat.com', 'https://www.verifiedbysky.com', { url: 'https://web.archive.org/web/20171024155035/https://www.kegco.com/', name: 'kegco.com', slug: 'kegco', note: 'Past project (2017 archive)' }],
 };
 
 export const SERVICES = [

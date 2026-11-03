@@ -130,12 +130,15 @@ const deploys = SITE.deployments?.length
   ? `<!-- deploys --><section id="deployments" class="wrap section" aria-labelledby="deploy-h">
         <p class="eyebrow">§ 05 — Deployments</p>
         <h2 id="deploy-h">Past and current work.</h2>
-        <ul class="tree">${SITE.deployments.map((u) => {
-          const h = host(u), n = h.split('.')[0];
+        <ul class="tree">${SITE.deployments.map((d) => {
+          const u = typeof d === 'string' ? d : d.url;
+          const h = typeof d === 'string' ? host(u) : d.name;
+          const n = typeof d === 'string' ? h.split('.')[0] : d.slug;
+          const note = typeof d === 'string' ? 'Visit site →' : `${d.note} →`;
           const img = fs.existsSync(path.join(root, 'public/deploys', `${n}.webp`))
             ? `<img class="shot" src="/deploys/${n}.webp" width="168" height="105" alt="Screenshot of ${esc(h)}" loading="lazy" decoding="async" />`
             : `<span class="shot shot-none" aria-hidden="true">${esc(h)}</span>`;
-          return `<li><a href="${esc(u)}" target="_blank" rel="noopener">${img}<span><b>${esc(h)}</b><small>Visit site →</small></span></a></li>`;
+          return `<li><a href="${esc(u)}" target="_blank" rel="noopener">${img}<span><b>${esc(h)}</b><small>${esc(note)}</small></span></a></li>`;
         }).join('')}</ul>
       </section><!-- /deploys -->`
   : '<!-- deploys --><!-- /deploys -->';
