@@ -17,6 +17,8 @@ export const SITE = {
   // Sky's own profiles (personal LinkedIn…) and credentials, shown on his Person entry for search engines.
   founderProfiles: ['https://www.linkedin.com/in/moleculardeveloper/'],
   credentials: [{ name: 'Google AI Professional Certificate', by: 'Google' }],
+  // The thin "Past / current deployments" bar under the header on every page.
+  deployments: ['https://www.somebodystolethat.com', 'https://www.verifiedbysky.com', 'https://hermesgwermes.com'],
 };
 
 export const SERVICES = [
@@ -39,12 +41,12 @@ export const SERVICES = [
     ],
     steps: [
       ['Talk', 'A free 30-minute call about the decision in front of you and what is driving it.'],
-      ['Look', 'I review what you use today, what it costs, and how the work really flows.'],
-      ['Recommend', 'A short written recommendation: options, trade-offs and what I would do, in plain English.'],
+      ['Look', 'We review what you use today, what it costs, and how the work really flows.'],
+      ['Recommend', 'A short written recommendation: options, trade-offs and what we would do, in plain English.'],
       ['Decide', 'You decide. If you want help putting it in place, that becomes a fixed-scope project.'],
     ],
     faq: [
-      ['Do you sell software or take commissions?', 'No. I don’t resell tools or take referral fees, so the recommendation is based only on what fits your business.'],
+      ['Do you sell software or take commissions?', 'No. We don’t resell tools or take referral fees, so the recommendation is based only on what fits your business.'],
       ['Can you review a quote we already have?', 'Yes. Reviewing a developer’s or agency’s quote is one of the most common requests, and it usually takes a few days.'],
       ['What if the answer is “don’t buy anything”?', 'Then that is the recommendation. Keeping what you have and using it properly is often the cheapest fix.'],
     ],
@@ -68,9 +70,9 @@ export const SERVICES = [
     ],
     steps: [
       ['Scope', 'We agree in writing what will be set up, connected and handed over — and the fixed price.'],
-      ['Build', 'I configure the tool, move the data, and connect it to the systems you already use.'],
+      ['Build', 'We configure the tool, move the data, and connect it to the systems you already use.'],
       ['Test', 'We test it with real tasks from your week, on the devices your team and customers use.'],
-      ['Hand over', 'Short written instructions and a walkthrough, so it keeps working without me.'],
+      ['Hand over', 'Short written instructions and a walkthrough, so it keeps working without us.'],
     ],
     faq: [
       ['How long does an implementation take?', 'Most small-business projects take one to three weeks, and the timeline is agreed before work starts.'],
@@ -83,7 +85,7 @@ export const SERVICES = [
     name: 'Operational root-causing',
     short: 'When the same thing keeps breaking, we trace it to the cause instead of patching today’s fire.',
     title: 'Operational root-cause analysis for small businesses',
-    lede: 'When the same problem keeps coming back, it has a cause. I find it, fix it there, and make sure it stays fixed.',
+    lede: 'When the same problem keeps coming back, it has a cause. We find it, fix it there, and make sure it stays fixed.',
     who: [
       'Teams fixing the same issue every week: late invoices, missed bookings, wrong orders, lost messages.',
       'Owners who sense something is leaking money but can’t point to where.',
@@ -97,14 +99,14 @@ export const SERVICES = [
     ],
     steps: [
       ['Map', 'We trace how the work actually flows today — every hand-off, tool and workaround.'],
-      ['Find', 'I pinpoint where it breaks and why, and write it down in plain English.'],
+      ['Find', 'We pinpoint where it breaks and why, and write it down in plain English.'],
       ['Fix', 'We fix it at the source: a process change, an automation, or a tool set up properly.'],
       ['Check', 'We confirm it stays fixed, and leave a simple way to spot it early if it slips.'],
     ],
     faq: [
       ['What does “root-causing” mean?', 'It means finding the real reason a problem keeps happening, instead of fixing the same symptom every time it shows up.'],
       ['Is this about technology or about process?', 'Both. Most recurring problems are a process gap that technology makes worse — or that technology can close.'],
-      ['How do you work with my team?', 'I talk to the people doing the work, watch how it happens, and keep changes small enough to stick.'],
+      ['How do you work with my team?', 'We talk to the people doing the work, watch how it happens, and keep changes small enough to stick.'],
     ],
   },
   {
@@ -126,7 +128,7 @@ export const SERVICES = [
     ],
     steps: [
       ['Understand', 'We map the jobs your business does every day and the information each one needs.'],
-      ['Design', 'I design a simple setup: which tool owns what, and how information moves between them.'],
+      ['Design', 'We design a simple setup: which tool owns what, and how information moves between them.'],
       ['Build', 'We set it up, connect it, and automate the repetitive steps.'],
       ['Document', 'A short guide your team can follow, so the system outlasts any one person.'],
     ],
@@ -154,7 +156,7 @@ export const SERVICES = [
       'No record of what you own, what it costs, or who to call when it breaks.',
     ],
     steps: [
-      ['Inventory', 'I list every account, subscription, device and vendor, with who owns it and what it costs.'],
+      ['Inventory', 'We list every account, subscription, device and vendor, with who owns it and what it costs.'],
       ['Secure', 'Shared passwords move into a password manager, and old access is removed.'],
       ['Organise', 'Renewals, billing contacts and admin access go to the right people, on a calendar.'],
       ['Maintain', 'Ongoing help as needed: new hires, departures, vendor issues and renewals.'],
@@ -162,7 +164,7 @@ export const SERVICES = [
     faq: [
       ['Is this a monthly service?', 'It can be: a one-time cleanup, or light ongoing support for new hires, departures and renewals.'],
       ['Do you need our passwords?', 'Only the access a task requires, set up through a password manager — never sent by text or email.'],
-      ['What happens if you’re unavailable?', 'Everything is documented in a shared record you own, so nothing depends on me.'],
+      ['What happens if you’re unavailable?', 'Everything is documented in a shared record you own, so nothing depends on us.'],
     ],
   },
 ];
@@ -182,7 +184,7 @@ export const FAQ = [
   ['How long does a typical project take?',
    'Most projects take one to three weeks from agreement to handover. Advising work is often done within a week.'],
   ['Do you work remotely?',
-   'Yes, most work is done remotely, and I meet in person locally when it helps.'],
+   'Yes, most work is done remotely, and we meet in person locally when it helps.'],
   ['Will I be locked into you after the project?',
    'No. Everything is documented and handed over, and all accounts stay in your name, so your team or anyone else can take it from there.'],
   ['What’s the first step?',

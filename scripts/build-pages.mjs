@@ -125,6 +125,20 @@ function head({ title, description, url }) {
     <link rel="preload" href="/fonts/plex-mono.woff2" as="font" type="font/woff2" crossorigin />
     <style>${style}${extraStyle}    </style>`;
 }
+const host = (u) => u.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
+const deploys = SITE.deployments?.length
+  ? `<!-- deploys --><section id="deployments" class="wrap section" aria-labelledby="deploy-h">
+        <p class="eyebrow">§ 05 — Deployments</p>
+        <h2 id="deploy-h">Past and current work.</h2>
+        <ul class="tree">${SITE.deployments.map((u) => {
+          const h = host(u), n = h.split('.')[0];
+          const img = fs.existsSync(path.join(root, 'public/deploys', `${n}.webp`))
+            ? `<img class="shot" src="/deploys/${n}.webp" width="168" height="105" alt="Screenshot of ${esc(h)}" loading="lazy" decoding="async" />`
+            : `<span class="shot shot-none" aria-hidden="true">${esc(h)}</span>`;
+          return `<li><a href="${esc(u)}" target="_blank" rel="noopener">${img}<span><b>${esc(h)}</b><small>Visit site →</small></span></a></li>`;
+        }).join('')}</ul>
+      </section><!-- /deploys -->`
+  : '<!-- deploys --><!-- /deploys -->';
 const header = `
     <header class="header">
       <div class="wrap">
@@ -197,7 +211,7 @@ for (const [i, s] of SERVICES.entries()) {
         <ol class="steps">
           ${s.steps.map(([t, d], j) => `<li class="step${j === s.steps.length - 1 ? ' last' : ''}"><div class="k">${'ABCD'[j]}.</div><h3>${esc(t)}</h3><p>${esc(d)}</p></li>`).join('\n          ')}
         </ol>
-      </section>${faqBlock(s.faq, `${s.name}: questions`)}${cta('Not sure this is the right fit? Tell me what’s going on.')}
+      </section>${faqBlock(s.faq, `${s.name}: questions`)}${cta('Not sure this is the right fit? Tell us what’s going on.')}
       <section class="wrap more" aria-labelledby="more-h">
         <p class="eyebrow" id="more-h">Other services</p>
         <ul>${others.map((o) => `<li><a href="/services/${o.slug}/">${esc(o.name)} →</a></li>`).join('')}<li><a href="/faq/">Common questions →</a></li></ul>
@@ -235,6 +249,7 @@ for (const [i, s] of SERVICES.entries()) {
   let h = home;
   const graph = [...orgGraph(), { '@type': 'WebSite', '@id': abs('/#site'), url: abs('/'), name: SITE.name, publisher: { '@id': ORG_ID } }];
   h = h.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/, ld(graph));
+  h = h.replace(/<!-- deploys -->[\s\S]*?<!-- \/deploys -->/, deploys);
   h = h.replace(/\s*<meta name="twitter:card"[^>]*>/, '');
   h = h.replace(/\s*<meta property="og:image[^>]*>/g, '').replace(/\s*<meta name="twitter:image"[^>]*>/, '').replace(/\s*<link rel="apple-touch-icon"[^>]*>/, '');
   h = h.replace(/(<meta property="og:url"[^>]*>)/, `$1
@@ -259,4 +274,12 @@ ${urls.map((u) => `  <url><loc>${abs(u)}</loc><lastmod>${today}</lastmod></url>`
 `);
 }
 
-console.log(`[pages] ${SERVICES.length} service pages, FAQ, sitemap and home details written`);
+// ---------- what the chat assistant knows (read by the CRM's /chat endpoint) ----------
+fs.writeFileSync(path.join(root, 'public/assistant.json'), JSON.stringify({
+  site: { name: SITE.name, tagline: SITE.tagline, founder: SITE.founder, role: SITE.role, email: SITE.email, city: SITE.city, region: SITE.region, areas: SITE.areas, remote: true,
+    credentials: (SITE.credentials || []).map((c) => c.name) },
+  services: SERVICES.map(({ slug, name, lede, who, problems, steps, faq }) => ({ slug, name, lede, who, problems, steps, faq })),
+  faq: FAQ,
+}));
+
+console.log(`[pages] ${SERVICES.length} service pages, FAQ, sitemap, home details and assistant.json written`);

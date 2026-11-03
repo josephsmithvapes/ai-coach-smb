@@ -30,3 +30,7 @@ form?.addEventListener('submit', async (e) => {
 const live = () => document.documentElement.classList.add('live');
 ['pointermove', 'touchstart', 'scroll', 'keydown'].forEach((ev) => addEventListener(ev, live, { once: true, passive: true }));
 addEventListener('load', () => setTimeout(live, 6000));
+
+// Chat assistant: the button is plain HTML; the chat code downloads only when someone taps it.
+const chatBtn = document.querySelector('.chat-launch');
+chatBtn?.addEventListener('click', () => import('./chat.js').then((m) => m.open(chatBtn)));
