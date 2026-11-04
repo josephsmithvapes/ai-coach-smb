@@ -125,19 +125,17 @@
       .form .err { color: #B91C1C; font-size: 15px; }
       .form[hidden], .msg[hidden] { display: none; }
 
-      /* deployments tree */
-      .tree { list-style: none; margin: 28px 0 0; padding: 0 0 0 18px; border-left: 2px solid var(--ink); display: grid; gap: 18px; }
-      .tree li { position: relative; padding-left: 22px; }
-      .tree li::before { content: ""; position: absolute; left: -18px; top: 28px; width: 40px; height: 2px; background: var(--ink); }
-      .tree li::after { content: ""; position: absolute; left: 19px; top: 23px; width: 12px; height: 12px; background: var(--accent); }
-      .tree a { display: grid; grid-template-columns: 168px 1fr; gap: 18px; align-items: center; margin-left: 20px; max-width: 560px; padding: 10px; border: 1px solid var(--ink); background: #fff; color: var(--ink); text-decoration: none; }
-      .tree a:hover, .tree a:focus-visible { border-color: var(--accent); }
-      .tree .shot { display: block; width: 168px; height: 105px; background: var(--paper); border: 1px solid #d9d7d0; object-fit: cover; }
-      .tree .shot-none { display: grid; place-items: center; font: 12px var(--mono); color: var(--ink-3); }
-      .tree a > span:last-child { min-width: 0; }
-      .tree b { display: block; font-size: 18px; overflow-wrap: anywhere; }
-      .tree small { display: block; margin-top: 4px; font: 13px var(--mono); color: var(--ink-3); }
-      @media (max-width: 520px) { .tree a { grid-template-columns: 96px 1fr; gap: 12px; } .tree .shot { width: 96px; height: 60px; } .tree .shot-none { font-size: 0; } .tree b { font-size: 15px; } .tree li { padding-left: 14px; } .tree a { margin-left: 12px; } }
+      /* past / current work strip */
+      .work { border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 22px 0 24px; }
+      .work-k { margin: 0 0 14px; font: 12px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+      .work-row { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+      .work-row a { display: block; color: var(--ink); text-decoration: none; }
+      .work-row .shot { display: block; width: 100%; height: auto; aspect-ratio: 8 / 5; background: var(--paper); border: 1px solid var(--ink); object-fit: cover; }
+      .work-row .shot-none { display: grid; place-items: center; font: 12px var(--mono); color: var(--ink-3); }
+      .work-row a:hover .shot, .work-row a:focus-visible .shot { border-color: var(--accent); }
+      .work-row span.cap { display: block; margin-top: 8px; font: 13px var(--mono); overflow-wrap: anywhere; }
+      .work-row a:hover .cap, .work-row a:focus-visible .cap { color: var(--accent); }
+      @media (max-width: 720px) { .work-row { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
       /* chat button (the chat itself loads only when tapped) */
       .chat-launch { position: fixed; right: 16px; bottom: 16px; z-index: 50; display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 6px 16px 6px 6px; border: 0; border-radius: 999px; background: var(--ink); color: var(--paper); font: 600 14px var(--sans); cursor: pointer; box-shadow: 0 6px 24px rgba(0,0,0,.2); }
       .chat-launch img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
