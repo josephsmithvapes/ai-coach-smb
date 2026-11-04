@@ -31,6 +31,32 @@ const live = () => document.documentElement.classList.add('live');
 ['pointermove', 'touchstart', 'scroll', 'keydown'].forEach((ev) => addEventListener(ev, live, { once: true, passive: true }));
 addEventListener('load', () => setTimeout(live, 6000));
 
-// Chat assistant: the button is plain HTML; the chat code downloads only when someone taps it.
-const chatBtn = document.querySelector('.chat-launch');
-chatBtn?.addEventListener('click', () => import('./chat.js').then((m) => m.open(chatBtn)));
+// Chat assistant: the terminal is plain HTML; the chat code downloads only when someone uses it
+// (or already has a conversation going this session).
+const term = document.getElementById('terminal');
+if (term) {
+  let mod;
+  const ready = () => (mod ||= import('./chat.js').then((m) => { m.init(term); return m; }));
+  term.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const input = term.querySelector('input');
+    const v = input.value.trim();
+    if (v) ready().then((m) => m.send(v));
+  });
+  term.addEventListener('click', (e) => {
+    const b = e.target.closest('.term-sugg button');
+    if (b) ready().then((m) => m.send(b.textContent));
+  });
+  term.addEventListener('focusin', () => ready(), { once: true });
+  try { if (sessionStorage.getItem('aii-chat')) addEventListener('load', () => setTimeout(ready, 1500)); } catch {}
+
+  // The floating button just takes people to the terminal, and steps aside while it's on screen.
+  const btn = document.querySelector('.chat-launch');
+  btn?.addEventListener('click', () => {
+    term.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(() => term.querySelector('input').focus({ preventScroll: true }), 400);
+  });
+  if (btn && 'IntersectionObserver' in window) {
+    new IntersectionObserver(([en]) => { btn.hidden = en.isIntersecting; }, { threshold: 0.3 }).observe(term);
+  }
+}
