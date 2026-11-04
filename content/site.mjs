@@ -17,8 +17,9 @@ export const SITE = {
   // Sky's own profiles (personal LinkedIn…) and credentials, shown on his Person entry for search engines.
   founderProfiles: ['https://www.linkedin.com/in/moleculardeveloper/'],
   credentials: [{ name: 'Google AI Professional', by: 'Google' }],
-  // The thin "Past / current deployments" bar under the header on every page.
-  deployments: ['https://www.somebodystolethat.com', 'https://www.verifiedbysky.com', { url: 'https://web.archive.org/web/20171024155035/https://www.kegco.com/', name: 'kegco.com', slug: 'kegco', note: 'Past project (2017 archive)' }],
+  // The "Past / current work" strip above the footer (home page). Screenshots live in public/deploys/<slug>.webp.
+  deployments: ['https://www.somebodystolethat.com', 'https://www.verifiedbysky.com', { url: 'https://web.archive.org/web/20171024155035/https://www.kegco.com/', name: 'kegco.com', slug: 'kegco', note: '2017' },
+    { url: 'https://www.boldcrewcoldbrew.com', name: 'boldcrewcoldbrew.com', slug: 'boldcrewcoldbrew' }],
 };
 
 export const SERVICES = [
